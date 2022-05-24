@@ -50,16 +50,27 @@ class Boid
 
 };
 
+vector<pair<float,float>> show(Boid boid1, Boid boid2){
+    pair<float, float> position1 = boid1.getPosition();
+    pair<float, float> position2 = boid2.getPosition();
+    vector<pair<float, float>> ret;
+    ret.push_back(position1);
+    ret.push_back(position2);
+    return ret;
+}
+
 int main(){
-    Boid boid(Vector2D(250.0, 250.0), Vector2D(2.0, 2.0), Vector2D(1.0, 1.0));
-    int count = 0;
+    Boid boid1(Vector2D(250.0, 250.0), Vector2D(2.0, 2.0), Vector2D(1.0, 1.0));
+    Boid boid2(Vector2D(100.0, 100.0), Vector2D(2.5, 2.5), Vector2D(1.25, 1.25));
+
+    /*int count = 0;
     while (count < 10)
     {
-        boid.update();
+        boid1.update();
         count++;
-        cout << boid.getPosition().first << " " << boid.getPosition().second << endl;
-        cout << boid.getVelocity().first << " " << boid.getVelocity().second << endl;
-        cout << boid.getAccelaration().first << " " << boid.getAccelaration().second << endl;
-    }
+        cout << boid1.getPosition().first << " " << boid.getPosition().second << endl;
+        cout << boid1.getVelocity().first << " " << boid.getVelocity().second << endl;
+        cout << boid1.getAccelaration().first << " " << boid.getAccelaration().second << endl;
+    }*/
     return 0;
 }
