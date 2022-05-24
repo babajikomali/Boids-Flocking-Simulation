@@ -50,18 +50,14 @@ class Boid
 
 };
 
-vector<pair<float,float>> show(Boid boid1, Boid boid2){
-    pair<float, float> position1 = boid1.getPosition();
-    pair<float, float> position2 = boid2.getPosition();
-    vector<pair<float, float>> ret;
-    ret.push_back(position1);
-    ret.push_back(position2);
-    return ret;
-}
-
 int main(){
     Boid boid1(Vector2D(250.0, 250.0), Vector2D(2.0, 2.0), Vector2D(1.0, 1.0));
     Boid boid2(Vector2D(100.0, 100.0), Vector2D(2.5, 2.5), Vector2D(1.25, 1.25));
+
+    vector<pair<float, float>> flock;
+
+    flock.push_back(boid1.getPosition());
+    flock.push_back(boid2.getPosition());
 
     /*int count = 0;
     while (count < 10)
